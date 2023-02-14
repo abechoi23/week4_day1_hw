@@ -1,0 +1,20 @@
+def lucky_numbers(arr):
+    counter = {}
+    
+    for num in arr:
+        if num in counter:
+            counter[num] += 1
+        else:
+            counter[num] = 1
+            
+    lucky_num = -1
+    
+    for key in counter: 
+        if key == counter[key]:
+            if key > lucky_num:
+                lucky_num = key
+                
+    return lucky_num
+
+
+lucky_numbers([1,2,2,3,3,3])
